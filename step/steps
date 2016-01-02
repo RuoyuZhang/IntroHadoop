@@ -1,0 +1,8 @@
+hadoop fs -ls
+hadoop fs -put purchases.txt
+hadoop fs -tail purchases.txt
+
+hs mapper1.py reducer1.py purchases.txt output1
+hadoop fs -ls output1
+hadoop fs -cat output1/part-00000
+hadoop fs -get output1/part-00000 output1
